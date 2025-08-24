@@ -6,7 +6,7 @@ import { SharedDataService } from '../shared-data.service';
   selector: 'app-sibling-a',
   template: `<button (click)="sendData()">Send Data</button>`
 })
-export class SiblingAComponent {
+export class SiblingBComponent {
   constructor(private sharedService: SharedDataService) {}
 
   sendData() {
