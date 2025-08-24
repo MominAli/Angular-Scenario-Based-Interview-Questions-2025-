@@ -3,10 +3,10 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class SharedDataService {
-  private sharedValue$ = new BehaviorSubject<string>('Initial value');
-  readonly data$ = this.sharedValue$.asObservable();
+  private dataSource = new BehaviorSubject<any>(null);
+  data$ = this.dataSource.asObservable();
 
-  updateData(newValue: string) {
-    this.sharedValue$.next(newValue);
+  setData(data: any) {
+    this.dataSource.next(data);
   }
 }

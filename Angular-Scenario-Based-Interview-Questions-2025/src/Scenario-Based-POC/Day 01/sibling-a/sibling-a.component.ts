@@ -1,12 +1,15 @@
+// sibling-a.component.ts
 import { Component } from '@angular/core';
+import { SharedDataService } from '../shared-data.service';
 
 @Component({
   selector: 'app-sibling-a',
-  standalone: true,
-  imports: [],
-  templateUrl: './sibling-a.component.html',
-  styleUrl: './sibling-a.component.css'
+  template: `<button (click)="sendData()">Send Data</button>`
 })
 export class SiblingAComponent {
+  constructor(private sharedService: SharedDataService) {}
 
+  sendData() {
+    this.sharedService.setData({ message: 'Hello from A!' });
+  }
 }
