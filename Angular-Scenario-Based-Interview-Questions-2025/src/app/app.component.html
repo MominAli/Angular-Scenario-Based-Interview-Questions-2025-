@@ -1,6 +1,13 @@
-<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <!-- Sidebar -->
+    <div class="col-auto col-md-3 col-lg-2 px-0 bg-dark">
+      <app-navbar></app-navbar>
+    </div>
 
-<!-- Optional: SSR hydration-safe wrapper -->
-<div class="app-shell" role="main">
-  <router-outlet></router-outlet>
+    <!-- Main Content -->
+    <div class="col py-3 app-shell" role="main">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
