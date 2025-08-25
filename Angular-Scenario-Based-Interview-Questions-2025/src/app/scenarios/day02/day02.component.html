@@ -1,1 +1,47 @@
-  <h2>Day 01: Scenario Challenge</h2>
+<div class="day-content container-fluid py-4">
+  <div class="row">
+    <div class="col-12 col-lg-10 offset-lg-1">
+      <h6 class="mb-3">{{ title }}</h6>
+
+      <ul class="list-group mb-4">
+        <li class="list-group-item">🔗 Step 1: Lift state to parent — Manage shared data in <code>Day02Component</code> to coordinate siblings.</li>
+        <li class="list-group-item">📤 Step 2: Use <code>Output()</code> in sender — Emit selected value from <code>QuestionComponent</code>.</li>
+        <li class="list-group-item">📥 Step 3: Use <code>Input()</code> in receiver — Bind selected value to <code>AnswerComponent</code>.</li>
+        <li class="list-group-item">🔄 Step 4: Keep it reactive — Use <code>BehaviorSubject</code> or <code>signal()</code> for reactive updates if needed.</li>
+        <li class="list-group-item">🧘 Step 5: Respect ceremonial UX — Show spiritual reminders when no selection is made.</li>
+        <li class="list-group-item">🧪 Step 6: SSR hydration-safe — Avoid direct DOM access and wrap browser-only logic with <code>isPlatformBrowser()</code>.</li>
+      </ul>
+
+      <!-- 🌿 Input/Output Parameter Components Sharing Data -->
+<div class="row gx-4 gy-3 align-items-start example-section">
+  <div class="col-12">
+    <h6 class="section-title">🔄 Input and Output Component Interaction</h6>
+    <p class="text-muted mb-4">
+      Select a question on the left to reveal its answer on the right. This demonstrates <code>Output()</code> and <code>Input()</code> communication.
+    </p>
+  </div>
+
+  <!-- Question Selector -->
+  <div class="col-md-6">
+    <div class="card shadow-sm h-100 interaction-card">
+      <div class="card-header bg-primary text-white">❓ Questions</div>
+      <div class="card-body">
+        <app-question (select)="onQuestionSelected($event)"></app-question>
+      </div>
+    </div>
+  </div>
+
+  <!-- Answer Display -->
+  <div class="col-md-6">
+    <div class="card shadow-sm h-100 interaction-card">
+      <div class="card-header bg-success text-white">✅ Answer</div>
+      <div class="card-body">
+        <app-answer [question]="selectedQuestion"></app-answer>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
